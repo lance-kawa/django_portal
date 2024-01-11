@@ -1,0 +1,11 @@
+<!-- templates/cv.html -->
+
+{% extends "base.html" %}
+
+{% block title %}Notre super agence{% endblock %}
+
+{% block content %}
+    {% for user in users  %}
+        <a href="{% url 'user_profile' user.username %}">{{user}}</a>
+    {% endfor %}
+{% endblock %}

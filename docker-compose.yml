@@ -1,0 +1,72 @@
+version: '3.7'
+
+services: 
+  nginx: 
+    container_name: nginx
+    build: ./.docker/nginx 
+    ports:
+      - 1337:80 
+    volumes:  
+      - ./.docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./app/portfolio/static:/app/static 
+    depends_on: 
+      - django 
+    restart: on-failure 
+
+  django:
+    container_name: django
+    image: django_service 
+    build: . 
+    command: sh -c "python manage.py makemigrations &&
+                    python manage.py migrate &&
+                    gunicorn portfolio.wsgi:application --bind 0.0.0.0:${APP_PORT} --reload" 
+    volumes:
+      - ./app:/app 
+      - ./app/portfolio/static:/app/portfolio/static
+    env_file: 
+      - .env 
+    expose: 
+      - ${APP_PORT}
+    restart: on-failure
+    depends_on: 
+      - postgres_django
+
+  postgres_django: 
+    image: postgres:12-alpine 
+    container_name: postgres_django
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres12_data:/var/lib/postgresql/data/
+    environment: 
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+      - PGPORT=${DB_PORT}
+      - POSTGRES_USER=${POSTGRES_USER}
+    restart: on-failure
+
+
+  rabbitmq:
+    image: 
+      rabbitmq:3-management-alpine 
+    container_name: rabbitmq_django
+    volumes: 
+        - ./.docker/rabbitmq/etc/:/etc/rabbitmq/
+        - ./.docker/rabbitmq/data/:/var/lib/rabbitmq/
+        - ./.docker/rabbitmq/logs/:/var/log/rabbitmq/
+    environment: 
+      RABBITMQ_ERLANG_COOKIE: ${RABBITMQ_ERLANG_COOKIE}
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER} 
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+    ports: 
+      - 5672:5672
+      - 15672:15672
+    depends_on: 
+      - django
+
+
+volumes:
+  postgres12_data:
+  static_volume:
+  rabbitmq:
+  rabbitmq_logs:
