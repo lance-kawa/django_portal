@@ -29,11 +29,11 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'secret_key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if os.getenv('ENV') == 'development' else False
 
-ALLOWED_HOSTS = ['https://portfolio-kawa.up.railway.app']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1').split(' ')
 
-CSRF_TRUSTED_ORIGINS = ['https://portfolio-kawa.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://portfolio-kawa.up.railway.app/']
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = True 
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -150,7 +150,6 @@ USE_TZ = True
 STATIC_ROOT = 'portfolio/static/'
 STATIC_URL = 'static/'
 MEDIA_ROOT = 'portfolio/'
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
