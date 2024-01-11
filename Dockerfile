@@ -8,8 +8,8 @@ COPY . .
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
+WORKDIR /app
 EXPOSE 8000  
 
 ENTRYPOINT ["./migrate.sh"]
-WORKDIR /app
 CMD ["gunicorn", "portfolio.wsgi:application", "--bind", "0.0.0.0:8000"]
