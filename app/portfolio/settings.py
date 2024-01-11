@@ -31,7 +31,7 @@ DEBUG = True if os.getenv('ENV') == 'development' else False
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1').split(' ')
 
-CSRF_TRUSTED_ORIGINS = os.getenv('ALLOWED_HOSTS', '127.0.0.1').split(' ')
+CSRF_TRUSTED_ORIGINS = ['https://portfolio-kawa.up.railway.app']
 
 CORS_ORIGIN_ALLOW_ALL = True 
 
