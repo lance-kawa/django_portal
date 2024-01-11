@@ -10,15 +10,15 @@ services:
     restart: always
     container_name: postgres
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=postgres
+    - POSTGRES_USER=${PGUSER}
+    - POSTGRES_PASSWORD=${PGPASSWORD}
+    - POSTGRES_DB=${PGDATABASE}
     ports:
       - "5432:5432"
     healthcheck:
       interval: 10s
       retries: 10
-      test: "pg_isready -U \"$$DB_USER\" -d \"$$DB_NAME\""
+      test: "pg_isready -U \"$$PGUSER\" -d \"$$DB_NAME\""
       timeout: 2s
     volumes:
       - postgres_data:/var/lib/postgresql/data
