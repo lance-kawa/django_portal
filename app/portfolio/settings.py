@@ -29,11 +29,11 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'secret_key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if os.getenv('ENV') == 'development' else False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://portfolio-kawa.up.railway.app']
 
 CSRF_TRUSTED_ORIGINS = ['https://portfolio-kawa.up.railway.app']
 
-CORS_ORIGIN_ALLOW_ALL = True if os.getenv('CORS_ORIGIN_ALLOW_ALL') == 1 else False
+CORS_ORIGIN_ALLOW_ALL = True
 
 INSTALLED_APPS = [
     'django.contrib.admin',
