@@ -105,9 +105,9 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': os.getenv('ENGINE', 'django.db.backends.postgresql'),
-        'NAME': os.getenv("PGDATABASE", 'portfolio'),
-        'USER': os.getenv("PGUSER", 'postgres'),
-        'PASSWORD': os.getenv("PGPASSWORD", 'postgres'),
+        'NAME': os.getenv("POSTGRES_DB", 'portfolio'),
+        'USER': os.getenv("POSTGRES_USER", 'postgres'),
+        'PASSWORD': os.getenv("POSTGRES_PASSWORD", 'postgres'),
         'HOST': os.getenv("PGHOST", '127.0.0.1'),
         'PORT': os.getenv("PGPORT", '5432'),
     }}
