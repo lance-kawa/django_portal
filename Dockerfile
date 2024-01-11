@@ -10,4 +10,6 @@ RUN pip install -r requirements.txt
 
 EXPOSE 8000  
 WORKDIR /app
-CMD ["python", "manage.py", "runserver"]
+
+# RUN python3 manage.py makemigrations && python3 manage.py migrate
+CMD ["gunicorn", "portfolio.wsgi:application", "--bind", "0.0.0.0:8000"]
