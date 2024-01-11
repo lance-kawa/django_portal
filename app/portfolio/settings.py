@@ -29,9 +29,9 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if os.getenv('ENV') == 'development' else False
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1').split(' ')
 
-CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS').split(' ')
+CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS', 'http://localhost:1337').split(' ')
 
 CORS_ORIGIN_ALLOW_ALL = True if os.getenv('CORS_ORIGIN_ALLOW_ALL') == 1 else False
 
@@ -105,11 +105,11 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': os.getenv('ENGINE', 'django.db.backends.postgresql'),
-        'NAME': os.getenv("PGDATABASE"),
-        'USER': os.getenv("PGUSER"),
-        'PASSWORD': os.getenv("PGPASSWORD"),
-        'HOST': os.getenv("PGHOST"),
-        'PORT': os.getenv("PGPORT"),
+        'NAME': os.getenv("PGDATABASE", 'portfolio'),
+        'USER': os.getenv("PGUSER", 'postgres'),
+        'PASSWORD': os.getenv("PGPASSWORD", 'postgres'),
+        'HOST': os.getenv("PGHOST", '127.0.0.1'),
+        'PORT': os.getenv("PGPORT", '5432'),
     }}
 
 
