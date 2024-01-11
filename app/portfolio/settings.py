@@ -31,7 +31,7 @@ DEBUG = True if os.getenv('ENV') == 'development' else False
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS', 'http://localhost:1337').split(' ')
+CSRF_TRUSTED_ORIGINS = ['https://portfolio-kawa.up.railway.app']
 
 CORS_ORIGIN_ALLOW_ALL = True if os.getenv('CORS_ORIGIN_ALLOW_ALL') == 1 else False
 
@@ -150,6 +150,7 @@ USE_TZ = True
 STATIC_ROOT = 'portfolio/static/'
 STATIC_URL = 'static/'
 MEDIA_ROOT = 'portfolio/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
