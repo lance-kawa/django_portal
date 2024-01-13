@@ -1,7 +1,7 @@
-import json
 from django import template
 from itertools import groupby
 from operator import itemgetter
+from django.utils.translation import get_language
 
 register = template.Library()
 

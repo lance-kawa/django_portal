@@ -1,0 +1,552 @@
+[
+    {
+        "model": "cv.profil",
+        "pk": 1,
+        "fields": {
+            "user": 2,
+            "firstname": "Bastien",
+            "name": "Ederhy",
+            "profil_picture": "static/media/profil_pictures/Ekawa_e5G4Ft0.png",
+            "cv_picture": "static/media/cv_pictures/Ekawa.png",
+            "bg_picture": "static/media/cv_pictures/bg_kawa1.png",
+            "cv": "static/media/cv/CV_LM_11_2023_jPeWatf.pdf",
+            "email": "elkawa.dev@gmail.com",
+            "address": "1 passage Frédéric Bonnefille 91300 Massy",
+            "tel": "0785804336",
+            "linkedin": "https://www.linkedin.com/in/bastien-ederhy/",
+            "github": "https://github.com/EkawaD",
+            "website": "https://portfolio-kawa.up.railway.app/",
+            "intro": "Hello! I'm a developer with a strong skill set in Python and TypeScript, bringing five years of varied experience to the table. I love modern webstack solutions such as Django and DRF, FastAPI, React or Next.js but I'm known for my versatility that extends across different technologies. I'm also a huge fan of Docker and CI/CD pipelines to deliver reay-to-go applications. Whether it's building engaging websites or developing seamless APIs, my focus is on creating user-friendly and effective solutions. Known for clear communication and creativity, I'm dedicated to helping both startups and established businesses navigate their tech needs. Ready to turn your digital ideas into reality? Let's collaborate and make something amazing!",
+            "intro_en": "Hello! I'm a developer with a strong skill set in Python and TypeScript, bringing five years of varied experience to the table. I love modern webstack solutions such as Django and DRF, FastAPI, React or Next.js but I'm known for my versatility that extends across different technologies. I'm also a huge fan of Docker and CI/CD pipelines to deliver reay-to-go applications. Whether it's building engaging websites or developing seamless APIs, my focus is on creating user-friendly and effective solutions. Known for clear communication and creativity, I'm dedicated to helping both startups and established businesses navigate their tech needs. Ready to turn your digital ideas into reality? Let's collaborate and make something amazing!",
+            "intro_fr": "Salut ! Je suis développeur avec une solide expertise en Python et TypeScript, avec plus de 5 ans d'expérience dans ces language. Mes frameworks principaux sont Django, DRF, FastAPI, React et Next.js, mais je suis d'une grande polyvalence et vous apprécierez mon adaptabilité. Grand fan de Docker et des pipelines CI/CD, je m'applique toujours à délivrer des applications robuste et prêtes à l'emploi ! Que ce soit pour créer des sites web attrayants ou développer des API performantes, ma priorité est de créer des solutions user-friendly et efficaces. Reconnu pour mes softskills et ma créativité, j'ai déjà aider de nombreuses startup et grand groupes à répondre à leurs besoins techniques. Ready ? Let's build something cool together !"
+        }
+    },
+    {
+        "model": "cv.experience",
+        "pk": 1,
+        "fields": {
+            "profil": 1,
+            "entreprise": "Sealk",
+            "poste": "Backend Engineer",
+            "poste_en": "Backend Engineer",
+            "poste_fr": "Ingénieur Backend",
+            "place": "Paris",
+            "description": "Developed and maintained micro-service APIs.\r\nImplemented a global middleware for authorization management.\r\nLead developer during design model sessions. Conducted code reviews for the data science team and validated Merge Requests/Pull Requests.\r\nLed an MLOps initiative.\r\nDeployments using Git, GitLab Pipeline, and Docker.",
+            "description_en": "Developed and maintained micro-service APIs.\r\nImplemented a global middleware for authorization management.\r\nLead developer during design model sessions. Conducted code reviews for the data science team and validated Merge Requests/Pull Requests.\r\nLed an MLOps initiative.\r\nDeployments using Git, GitLab Pipeline, and Docker.",
+            "description_fr": "Développement et maintenance API micro-services\r\nImplémentation d'un middleware global de gestion des autorisations\r\nLead dev lors des design model sessions. Code review de l'équipe data science, validation des MR/PR\r\nPilote d'une initiative MLOps.\r\nDéploiements utilisant Git, GitLab Pipeline et Docker",
+            "start_date": "2023-04-01",
+            "end_date": "2023-11-02"
+        }
+    },
+    {
+        "model": "cv.experience",
+        "pk": 2,
+        "fields": {
+            "profil": 1,
+            "entreprise": "Dotsha",
+            "poste": "Freelance",
+            "poste_en": "Freelance",
+            "poste_fr": "Freelance",
+            "place": "Paris",
+            "description": "Scraped a website to retrieve public information about companies and their partners.\r\nIntegrated third-party CRMs into the Dotsha marketplace (Salesforce, Hubspot, etc.).\r\nDeveloped a micro-service component for the existing backend: A REST API for identifying and adding integrations.",
+            "description_en": "Scraped a website to retrieve public information about companies and their partners.\r\nIntegrated third-party CRMs into the Dotsha marketplace (Salesforce, Hubspot, etc.).\r\nDeveloped a micro-service component for the existing backend: A REST API for identifying and adding integrations.",
+            "description_fr": "Scrapping d'un site afin de récupérer des informations publiques sur des entreprises et leurs partenaires.\r\nIntégration de CMR tiers au marketplace de Dotsha (Salesforce, Hubspot...)\r\nDéveloppement d'une brique micro-service sur le backend existant: Une API REST permettant d'identifier et d'ajouter les intégrations",
+            "start_date": "2022-10-01",
+            "end_date": "2023-03-01"
+        }
+    },
+    {
+        "model": "cv.experience",
+        "pk": 3,
+        "fields": {
+            "profil": 1,
+            "entreprise": "CAGIP ( Crédit agricole SA )",
+            "poste": "Python Developer",
+            "poste_en": "Python Developer",
+            "poste_fr": "Développeur python",
+            "place": "Paris",
+            "description": "Developed an ETL for managing risks related to the group's IT production.\r\nDevelopment (OOP, Pandas), SQL Abstraction (ORM).\r\nDocumentation, Testing (Pytest), Deployments (Git).\r\nManaged user accounts and permissions (Windows Server).\r\nData visualization (PowerBI, Flask).\r\nCommand Line Interface (CLI) development using the Python cmd module.",
+            "description_en": "Developed an ETL for managing risks related to the group's IT production.\r\nDevelopment (OOP, Pandas), SQL Abstraction (ORM).\r\nDocumentation, Testing (Pytest), Deployments (Git).\r\nManaged user accounts and permissions (Windows Server).\r\nData visualization (PowerBI, Flask).\r\nCommand Line Interface (CLI) development using the Python cmd module.",
+            "description_fr": "Développement d'un ETL pour gérer les risques liés à la production informatique du groupe.\r\nDéveloppement (POO, Pandas), Abstraction SQL (ORM)\r\nDocumentations, Tests (Pytest), Déploiements (Git)\r\nGestion des utilisateurs et habilitations (Windows Server)\r\nData visualisation (PowerBI, Flask)\r\nCLI (Python cmd module)",
+            "start_date": "2020-09-01",
+            "end_date": "2022-10-01"
+        }
+    },
+    {
+        "model": "cv.experience",
+        "pk": 4,
+        "fields": {
+            "profil": 1,
+            "entreprise": "AsTeam",
+            "poste": "Co-founder",
+            "poste_en": "Co-founder",
+            "poste_fr": "Co-fondateur",
+            "place": "Grenoble",
+            "description": "Contract with Explorys (Incubator).\r\nDeveloped a business plan to address the need for gamification of employee motivation.\r\nDeveloped a functional prototype (React / React Native)",
+            "description_en": "Contract with Explorys (Incubator).\r\nDeveloped a business plan to address the need for gamification of employee motivation.\r\nDeveloped a functional prototype (React / React Native)",
+            "description_fr": "Contrat Explorys (Incubateur)\r\nElaboration d'un Business Plan afin de répondre au besoin de gamification de la motivation salariale.\r\nDéveloppement d'une maquette fonctionnelle (React / React Native)",
+            "start_date": "2019-09-01",
+            "end_date": "2020-09-01"
+        }
+    },
+    {
+        "model": "cv.experience",
+        "pk": 5,
+        "fields": {
+            "profil": 1,
+            "entreprise": "Sofinco",
+            "poste": "Customer Advisor",
+            "poste_en": "Customer Advisor",
+            "poste_fr": "Conseiller clientèle",
+            "place": "Grenoble",
+            "description": "Customer advisor, handling client appointments, outbound/inbound calls, and credit application reviews & approvals.\r\nRe-engineered the agency and monitored commercial challenges.",
+            "description_en": "Customer advisor, handling client appointments, outbound/inbound calls, and credit application reviews & approvals.\r\nRe-engineered the agency and monitored commercial challenges.",
+            "description_fr": "Conseiller clientèle, (Rdv clients, appels sortants/entrants, étude & acceptation des dossiers de crédit)\r\nRe-engineering de l'agence et suivi des challenges commerciaux.",
+            "start_date": "2016-03-01",
+            "end_date": "2019-09-01"
+        }
+    },
+    {
+        "model": "cv.experience",
+        "pk": 6,
+        "fields": {
+            "profil": 1,
+            "entreprise": "Home",
+            "poste": "Freelance",
+            "poste_en": "Freelance",
+            "poste_fr": "Freelance",
+            "place": "Chez moi",
+            "description": "I now engage in a diverse range of projects, showcasing my versatility and expertise in the tech field",
+            "description_en": "I now engage in a diverse range of projects, showcasing my versatility and expertise in the tech field",
+            "description_fr": "Je suis actuellement engagé dans plusieurs projets mettant à défi mes compétences accumulé jusqu'ici",
+            "start_date": "2023-12-27",
+            "end_date": null
+        }
+    },
+    {
+        "model": "cv.diplome",
+        "pk": 1,
+        "fields": {
+            "profil": 1,
+            "title": "BAC S",
+            "title_en": "BAC S",
+            "title_fr": "BAC S",
+            "graduation_date": "2014-09-01",
+            "school": "Lycée Pablo Neruda",
+            "place": "Grenoble",
+            "description": "Engineering science option",
+            "description_en": "Engineering science option",
+            "description_fr": "Option Science de l'ingénieur"
+        }
+    },
+    {
+        "model": "cv.diplome",
+        "pk": 2,
+        "fields": {
+            "profil": 1,
+            "title": "BTS Bank",
+            "title_en": "BTS Bank",
+            "title_fr": "BTS Banque",
+            "graduation_date": "2018-09-01",
+            "school": "CFPB",
+            "place": "Grenoble",
+            "description": "",
+            "description_en": "",
+            "description_fr": ""
+        }
+    },
+    {
+        "model": "cv.diplome",
+        "pk": 3,
+        "fields": {
+            "profil": 1,
+            "title": "Bachelor's Degree in Organization Management",
+            "title_en": "Bachelor's Degree in Organization Management",
+            "title_fr": "Licence Gestion des organisations",
+            "graduation_date": "2019-09-01",
+            "school": "CNAM",
+            "place": "Grenoble",
+            "description": "",
+            "description_en": "",
+            "description_fr": ""
+        }
+    },
+    {
+        "model": "cv.diplome",
+        "pk": 4,
+        "fields": {
+            "profil": 1,
+            "title": "Master Web & BigData Architect",
+            "title_en": "Master Web & BigData Architect",
+            "title_fr": "Master Architecte Web & BigData",
+            "graduation_date": "2022-09-01",
+            "school": "IPSSI",
+            "place": "Paris",
+            "description": "",
+            "description_en": "",
+            "description_fr": ""
+        }
+    },
+    {
+        "model": "cv.project",
+        "pk": 1,
+        "fields": {
+            "profil": 1,
+            "title": "Fairception",
+            "image": "static/media/project_images/fair_bg.png",
+            "description": "Backend Django development for Fairception, a french startup. \r\nThis is a Soft Skills based recruitment platform that helps you discover your strengths & play them up",
+            "description_en": "Backend Django development for Fairception, a french startup. \r\nThis is a Soft Skills based recruitment platform that helps you discover your strengths & play them up",
+            "description_fr": "Développement backend Django pour Fairception, une startup française. Il s'agit d'une plateforme de recrutement basée sur les Soft Skills qui vous aide à découvrir vos points forts et à les mettre en valeur.",
+            "github": "",
+            "demo": "https://www.fairception.com/"
+        }
+    },
+    {
+        "model": "cv.project",
+        "pk": 2,
+        "fields": {
+            "profil": 1,
+            "title": "DaRino",
+            "image": "static/media/project_images/pizza.png",
+            "description": "DaRino is an excellent place to eat in Lyon if you love italian food. We build two websites for this project. The first one is an e-commerce one. It offers some delicious food to order from the finest selection made by Rino Loria. The second one is for the restaurant. Don't hesitate to order a reservation, it may be full otherwise !",
+            "description_en": "DaRino is an excellent place to eat in Lyon if you love italian food. We build two websites for this project. The first one is an e-commerce one. It offers some delicious food to order from the finest selection made by Rino Loria. The second one is for the restaurant. Don't hesitate to order a reservation, it may be full otherwise !",
+            "description_fr": "DaRino est un excellent endroit pour manger à Lyon si vous aimez la cuisine italienne. Nous avons construis deux sites Web pour ce projet. Le premier est une plateforme de commerce en ligne de délicieux plats parmi la meilleure sélection réalisée par Rino Loria. Le deuxième est destiné au restaurant. N'hésitez pas à réserver, sinon le restaurant risque d'être complet !",
+            "github": "",
+            "demo": "https://pastaepizza.fr/en"
+        }
+    },
+    {
+        "model": "cv.project",
+        "pk": 3,
+        "fields": {
+            "profil": 1,
+            "title": "Pythagore Formation",
+            "image": "static/media/project_images/formation.png",
+            "description": "During my adventure at Pythagore Formation, I had the opportunity to teach courses to eminent researchers at CNRS, as well as to a diverse and varied audience with needs for data visualization. The training sessions were focused on Django and Python.",
+            "description_en": "During my adventure at Pythagore Formation, I had the opportunity to teach courses to eminent researchers at CNRS, as well as to a diverse and varied audience with needs for data visualization. The training sessions were focused on Django and Python.",
+            "description_fr": "Durand mon aventure chez Pythagore formation, j'ai eu l'occasion de faire cours pour d'éminents chercheurs au CNRS mais aussi pour un public divers et varié ayant des besoins de visualisation de leurs données. Les formations furent centrés sur Django et Python",
+            "github": "",
+            "demo": "https://www.pythagore-fd.fr/"
+        }
+    },
+    {
+        "model": "cv.project",
+        "pk": 4,
+        "fields": {
+            "profil": 1,
+            "title": "Univ. Bagnolet",
+            "image": "static/media/project_images/Affiche.jpg",
+            "description": "Unipop's approach is to transmit knowledge and invite the appropriation of scientific tools to understand the contemporary world and develop a capacity for critical reflection. Through the form it takes, by creating spaces to talk calmly about serious issues, it promotes a culture of listening and mutual respect.",
+            "description_en": "Unipop's approach is to transmit knowledge and invite the appropriation of scientific tools to understand the contemporary world and develop a capacity for critical reflection. Through the form it takes, by creating spaces to talk calmly about serious issues, it promotes a culture of listening and mutual respect.",
+            "description_fr": "La démarche de l’Unipop est de transmettre des savoirs et d’inviter à l’appropriation des outils scientifiques pour comprendre le monde contemporain et développer une capacité de réflexion critique. Par la forme qu’elle prend, en créant des espaces permettant de parler sereinement de questions sérieuses, elle favorise une culture de l’écoute et du respect mutuel.",
+            "github": "",
+            "demo": "http://unipop-bagnolet.fr/"
+        }
+    },
+    {
+        "model": "cv.projectimage",
+        "pk": 4,
+        "fields": {
+            "project": 1,
+            "image": "static/media/project_images/Screenshot_from_2024-01-13_17-17-49.png"
+        }
+    },
+    {
+        "model": "cv.projectimage",
+        "pk": 5,
+        "fields": {
+            "project": 1,
+            "image": "static/media/project_images/cicd.jpg"
+        }
+    },
+    {
+        "model": "cv.projectimage",
+        "pk": 7,
+        "fields": {
+            "project": 1,
+            "image": "static/media/project_images/django.jpg"
+        }
+    },
+    {
+        "model": "cv.projectimage",
+        "pk": 8,
+        "fields": {
+            "project": 2,
+            "image": "static/media/project_images/italian_food_words_26076fb3f5.png"
+        }
+    },
+    {
+        "model": "cv.projectimage",
+        "pk": 9,
+        "fields": {
+            "project": 2,
+            "image": "static/media/project_images/ventes-ecommerce-deconfinement.jpg"
+        }
+    },
+    {
+        "model": "cv.projectimage",
+        "pk": 10,
+        "fields": {
+            "project": 2,
+            "image": "static/media/project_images/django_XlW3iBA.jpg"
+        }
+    },
+    {
+        "model": "cv.projectimage",
+        "pk": 11,
+        "fields": {
+            "project": 3,
+            "image": "static/media/project_images/SOLEIL_yuwl1y.jpg"
+        }
+    },
+    {
+        "model": "cv.projectimage",
+        "pk": 12,
+        "fields": {
+            "project": 3,
+            "image": "static/media/project_images/django_HbiPVco.jpg"
+        }
+    },
+    {
+        "model": "cv.projectimage",
+        "pk": 13,
+        "fields": {
+            "project": 4,
+            "image": "static/media/project_images/dns.jpg"
+        }
+    },
+    {
+        "model": "cv.projectimage",
+        "pk": 14,
+        "fields": {
+            "project": 4,
+            "image": "static/media/project_images/wordpress.jpeg"
+        }
+    },
+    {
+        "model": "cv.category",
+        "pk": 1,
+        "fields": {
+            "name": "Language"
+        }
+    },
+    {
+        "model": "cv.category",
+        "pk": 2,
+        "fields": {
+            "name": "Framework"
+        }
+    },
+    {
+        "model": "cv.category",
+        "pk": 3,
+        "fields": {
+            "name": "DevOps"
+        }
+    },
+    {
+        "model": "cv.category",
+        "pk": 4,
+        "fields": {
+            "name": "Base de données"
+        }
+    },
+    {
+        "model": "cv.category",
+        "pk": 5,
+        "fields": {
+            "name": "Librairies"
+        }
+    },
+    {
+        "model": "cv.category",
+        "pk": 6,
+        "fields": {
+            "name": "Frontend"
+        }
+    },
+    {
+        "model": "cv.skill",
+        "pk": 1,
+        "fields": {
+            "profil": 1,
+            "name": "Python",
+            "logo": "static/media/skill_images/python_dNal0A3.png",
+            "category": 1
+        }
+    },
+    {
+        "model": "cv.skill",
+        "pk": 2,
+        "fields": {
+            "profil": 1,
+            "name": "Typescript",
+            "logo": "static/media/skill_images/ts_gKPThIJ.png",
+            "category": 1
+        }
+    },
+    {
+        "model": "cv.skill",
+        "pk": 3,
+        "fields": {
+            "profil": 1,
+            "name": "Django + DRF",
+            "logo": "static/media/skill_images/django_KkIt1ph.png",
+            "category": 2
+        }
+    },
+    {
+        "model": "cv.skill",
+        "pk": 4,
+        "fields": {
+            "profil": 1,
+            "name": "FastAPI",
+            "logo": "static/media/skill_images/fastapi_tcspc8j.png",
+            "category": 2
+        }
+    },
+    {
+        "model": "cv.skill",
+        "pk": 5,
+        "fields": {
+            "profil": 1,
+            "name": "Flask",
+            "logo": "static/media/skill_images/flask_8eycNnL.png",
+            "category": 2
+        }
+    },
+    {
+        "model": "cv.skill",
+        "pk": 6,
+        "fields": {
+            "profil": 1,
+            "name": "Nest.js",
+            "logo": "static/media/skill_images/nest_LTdrS5M.jpeg",
+            "category": 2
+        }
+    },
+    {
+        "model": "cv.skill",
+        "pk": 7,
+        "fields": {
+            "profil": 1,
+            "name": "Git",
+            "logo": "static/media/skill_images/git_NCAWK2S.png",
+            "category": 3
+        }
+    },
+    {
+        "model": "cv.skill",
+        "pk": 8,
+        "fields": {
+            "profil": 1,
+            "name": "Docker",
+            "logo": "static/media/skill_images/docker_D30rZI6.png",
+            "category": 3
+        }
+    },
+    {
+        "model": "cv.skill",
+        "pk": 9,
+        "fields": {
+            "profil": 1,
+            "name": "Linux",
+            "logo": "static/media/skill_images/linux_ximvupo.png",
+            "category": 3
+        }
+    },
+    {
+        "model": "cv.skill",
+        "pk": 10,
+        "fields": {
+            "profil": 1,
+            "name": "SQL",
+            "logo": "static/media/skill_images/sql_WREbnfb.png",
+            "category": 4
+        }
+    },
+    {
+        "model": "cv.skill",
+        "pk": 11,
+        "fields": {
+            "profil": 1,
+            "name": "MongoDB",
+            "logo": "static/media/skill_images/mongodb_X1IewWX.png",
+            "category": 4
+        }
+    },
+    {
+        "model": "cv.skill",
+        "pk": 12,
+        "fields": {
+            "profil": 1,
+            "name": "ElasticSearch",
+            "logo": "static/media/skill_images/es_dpsTe0G.jpg",
+            "category": 4
+        }
+    },
+    {
+        "model": "cv.skill",
+        "pk": 13,
+        "fields": {
+            "profil": 1,
+            "name": "Pinecone",
+            "logo": "static/media/skill_images/pinecone_X47JkNm.png",
+            "category": 4
+        }
+    },
+    {
+        "model": "cv.skill",
+        "pk": 14,
+        "fields": {
+            "profil": 1,
+            "name": "Pandas / Numpy",
+            "logo": "static/media/skill_images/pandas_zQFICAv.png",
+            "category": 5
+        }
+    },
+    {
+        "model": "cv.skill",
+        "pk": 15,
+        "fields": {
+            "profil": 1,
+            "name": "Pydantic",
+            "logo": "static/media/skill_images/pydantic_x9Tih7M.png",
+            "category": 5
+        }
+    },
+    {
+        "model": "cv.skill",
+        "pk": 16,
+        "fields": {
+            "profil": 1,
+            "name": "Pytest",
+            "logo": "static/media/skill_images/pytest_p5jacT5.png",
+            "category": 5
+        }
+    },
+    {
+        "model": "cv.skill",
+        "pk": 18,
+        "fields": {
+            "profil": 1,
+            "name": "React",
+            "logo": "static/media/skill_images/react_Eh7NtmV.png",
+            "category": 6
+        }
+    },
+    {
+        "model": "cv.theme",
+        "pk": 1,
+        "fields": {
+            "name": "Neubrutalism_kawa",
+            "primary_color": "#ffffff",
+            "secondary_color": "#000000",
+            "extra_color": "#808080",
+            "default_font_color": "#000000",
+            "secondary_font_color": "#ffffff",
+            "category_order": "Language,Framework,DevOps,Base de données,Librairies,Frontend",
+            "profil": 1
+        }
+    }
+]

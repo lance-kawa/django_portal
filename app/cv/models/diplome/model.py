@@ -1,5 +1,6 @@
 from django.db import models
 from cv.models.profil import Profil
+from modeltranslation.translator import register, TranslationOptions
 
 class Diplome(models.Model):
     profil = models.ForeignKey(Profil, on_delete=models.CASCADE, related_name='diplomes')
@@ -12,3 +13,6 @@ class Diplome(models.Model):
     def __str__(self):
         return self.title
     
+@register(Diplome)
+class DiplomeTranslation(TranslationOptions):
+    fields = ('title', 'description',)  # specify fields to translate

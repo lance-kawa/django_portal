@@ -31,7 +31,7 @@ DEBUG = True if os.getenv('ENV') == 'development' else False
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1').split(' ')
 
-CSRF_TRUSTED_ORIGINS = ['https://portfolio-kawa.up.railway.app']
+CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS', '127.0.0.1').split(' ')
 
 CORS_ORIGIN_ALLOW_ALL = True 
 
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'corsheaders',
     'cv',
+    'modeltranslation',
 ]
 
 # Django REST Framework settings 
@@ -78,6 +79,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'portfolio.urls'
@@ -134,11 +136,19 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'portfolio/locale'),
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
+LANGUAGES = [
+    ('en', 'English'),
+    ('fr', 'French'),
+]
+LANGUAGE_CODE = 'en-us'
 
-LANGUAGE_CODE = 'fr-FR'
+USE_L10N = True
 
 TIME_ZONE = 'UTC'
 

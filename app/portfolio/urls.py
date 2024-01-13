@@ -21,7 +21,7 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
-from portfolio.views import home, user_profile
+from portfolio.views import change_language, home, user_profile, project_view
 
 
 
@@ -31,5 +31,7 @@ urlpatterns = [
     path('api/login', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/login/refresh', TokenRefreshView.as_view(), name='token_refresh'),
     path('', home, name='home'),
-    path('<str:username>', user_profile, name='user_profile')
+    path('language/<str:lang_code>/', change_language, name='change_language'),
+    path('<str:username>', user_profile, name='user_profile'),
+    path('project/<int:project_id>', project_view, name='project_view')
 ]

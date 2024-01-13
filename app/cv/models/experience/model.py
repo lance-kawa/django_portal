@@ -1,5 +1,6 @@
 from django.db import models
 from cv.models.profil import Profil
+from modeltranslation.translator import register, TranslationOptions
 
 class Experience(models.Model):
     profil = models.ForeignKey(Profil, on_delete=models.CASCADE, related_name='experiences')
@@ -13,3 +14,6 @@ class Experience(models.Model):
     def __str__(self):
         return self.poste
     
+@register(Experience)
+class ExperienceTranslation(TranslationOptions):
+    fields = ('poste', 'description',)  # specify fields to translate

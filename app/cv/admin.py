@@ -7,22 +7,22 @@ from cv.models.profil import Profil
 from cv.models.theme import Theme
 from cv.models.diplome import Diplome
 from cv.models.experience import Experience
-from cv.models.project import Project
+from cv.models.project import Project, ProjectImage
 from cv.models.skill import Skill, Category
 
 
 class ProfilAdmin(ProfilAdmin):
-    list_display = ['firstname', 'name', 'profil_picture'] 
+    list_display = ['id', 'firstname', 'name', 'profil_picture'] 
 
 class DiplomeAdmin(SubProfilAdmin):
-    list_display = ('title', 'profil_name', 'graduation_date', 'school', 'place')
+    list_display = ('id', 'title', 'profil_name', 'graduation_date', 'school', 'place')
     search_fields = ['title', 'profil_name']
 
 class ExperienceAdmin(SubProfilAdmin):
-    list_display = ('entreprise', 'poste', 'profil_name')
+    list_display = ('id', 'entreprise', 'poste', 'profil_name')
 
 class CategoryAdmin(SubProfilAdmin):
-    list_display = ['name', 'skills'] 
+    list_display = ['id', 'name', 'skills'] 
 
     def get_model_perms(self, request):
         """
@@ -31,10 +31,16 @@ class CategoryAdmin(SubProfilAdmin):
         return {}
 
 class SkillAdmin(SubProfilAdmin):
-    list_display = ['name', 'profil_name', 'category'] 
+    list_display = ['id', 'name', 'profil_name', 'category'] 
 
+    
+class ProjectImageInline(admin.TabularInline): 
+    model = ProjectImage
+    extra = 1  # Number of empty forms to display
+    
 class ProjectAdmin(SubProfilAdmin):
-    list_display = ['title', 'profil_name'] 
+    list_display = ['id', 'title', 'profil_name'] 
+    inlines = [ProjectImageInline]
 
 
 class ThemeForm(ModelForm):
