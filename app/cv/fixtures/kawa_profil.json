@@ -3,7 +3,7 @@
         "model": "cv.profil",
         "pk": 1,
         "fields": {
-            "user": 2,
+            "user": 1,
             "firstname": "Bastien",
             "name": "Ederhy",
             "profil_picture": "static/media/profil_pictures/Ekawa_e5G4Ft0.png",
