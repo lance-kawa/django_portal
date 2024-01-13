@@ -21,7 +21,6 @@ def user_profile(request: HttpRequest, username: str) -> HttpResponse:
     display_order = theme.category_order.split(',')
     template_name = 'portfolio/' + username + '.html'
     header_name = 'portfolio/' + username + '_header.html'
-    print(profil.bg_picture.url)
     return render(request, template_name, {
         'profil': profil, 
         'display_order': display_order, 
@@ -40,7 +39,6 @@ def change_language(request, lang_code):
 def project_view(request: HttpRequest, project_id: str) -> HttpResponse:
     project = Project.objects.get(id=project_id)
     profil = getattr(project, 'profil', None)
-    print(project.__dict__)
     return render(request, 'portfolio/project.html', {
         'profil': profil, 
         'header_name': 'portfolio/' + profil.user.username + '_header.html',
