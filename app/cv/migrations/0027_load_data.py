@@ -9,7 +9,7 @@ def load_data(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('cv', '0021_auto_20240112_1219'),
+        ('cv', '0026_profil_bg_picture.py'),
     ]
 
     operations = [
