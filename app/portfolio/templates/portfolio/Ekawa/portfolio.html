@@ -167,7 +167,7 @@
         {% for project in profil.projects.all %}
             <figure class="flex flex-col mx-3 my-3 overflow-hidden rounded-md border-2 border-black bg-white font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] ">
                 {% if project.image %}
-                    <img class="h-full max-h-[400px] object-cover border-b-2 border-black" src="{{ project.image }}" alt="image" />
+                    <img class="h-full max-h-[400px] object-cover border-b-2 border-black" src="{{ project.image.url }}" alt="image" />
                 {% endif %}
                 <div class=" font-bold text-xl my-2 mx-2">{{ project.title }}</div>
                 <figcaption class="border-t-2 border-black p-4 text-zinc-600 h-[120px]">

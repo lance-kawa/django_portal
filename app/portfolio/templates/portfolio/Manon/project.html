@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{{ project.title }}{% trans "'s Project" %}{% endblock %}
+{% block additional_css  %}
+    <style>
+        body {
+            font-family: Playpen Sans, 'sans serif'
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+    {% include header_name %}
+
+    <div class="container mx-auto py-8 min-h-[700px] flex flex-col items-center justify-center">
+        <h1 class="uppercase text-3xl mb-12 text-center">{% trans "My work at " %}{{ project.title }}</h1>
+        <div class="flex flex-col md:flex-row items-center px-4">
+            <div class="w-full h-64 md:w-1/2 lg:h-96">
+                <img class="h-full w-full rounded-md object-cover max-w-lg mx-auto shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]" src="{{ project.image.url }}" alt="project image">
+            </div>
+            <div class="w-full max-w-lg mx-auto mt-5 md:ml-8 md:mt-0 md:w-1/2 ">
+                <h2 class="uppercase text-lg">{{ project.title }}</h2>
+                <span class="text-gray-500 mt-3">{{ project.description|linebreaksbr }}</span>
+                <hr class="my-3">
+                <div class="flex gap-2 justify-center">
+                    {% if project.github %}
+                    <a
+                    class="bg-teal-800 dark:bg-teal-800 dark:bg-teal-800 active:translate-x-0 active:translate-y-0
+                    flex items-center border-slate-900 border-2 duration-200 px-2 py-2 -translate-x-1 -translate-y-1 hover:-translate-x-1.5
+                    hover:-translate-y-1.5 rounded text-white mx-2"
+                    href="{{ project.github }}"
+                    target="_blank"
+                    >   
+                        <i class="fab fa-github mx-2"></i>
+                        <span class="text-sm align-baseline">GitHub</span>
+                    </a>
+                    {% endif %}
+                    {% if project.demo %}
+                        <a
+                        class="bg-teal-800 dark:bg-teal-800 dark:bg-teal-800 active:translate-x-0 active:translate-y-0
+                        flex items-center border-slate-900 border-2 duration-200 px-2 py-2 -translate-x-1 -translate-y-1 hover:-translate-x-1.5
+                        hover:-translate-y-1.5 rounded text-white mx-2"
+                        href="{{ project.demo }}"
+                        target="_blank"
+                        >
+                            <i class="fas fa-globe mx-2"></i>
+                            <span class="text-sm align-baseline">Website</span>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="grid gris-cols-1 md:grid-cols-3 gap-4 mt-12 content-center px-4">
+        {% for item in project.images.all  %}
+            <div class="w-full">
+                <img class="h-full w-full rounded-md object-cover mx-auto shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]" src="{{ item }}" alt="project image">
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+
+{% endblock content %}

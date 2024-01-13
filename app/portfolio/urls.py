@@ -26,12 +26,12 @@ from portfolio.views import change_language, home, user_profile, project_view
 
 
 urlpatterns = [
-    path('admin', admin.site.urls),
-    path('api/cv', include(('cv.urls', 'api_cv')), name="api_cv"),
-    path('api/login', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/login/refresh', TokenRefreshView.as_view(), name='token_refresh'),
+    path('admin/', admin.site.urls),
+    path('api/cv/', include(('cv.urls', 'api_cv')), name="api_cv"),
+    path('api/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/login/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('', home, name='home'),
     path('language/<str:lang_code>/', change_language, name='change_language'),
-    path('<str:username>', user_profile, name='user_profile'),
-    path('project/<int:project_id>', project_view, name='project_view')
+    path('<str:username>/', user_profile, name='user_profile'),
+    path('project/<int:project_id>/', project_view, name='project_view')
 ]

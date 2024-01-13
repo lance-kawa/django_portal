@@ -7,12 +7,12 @@ class="fixed inset-x-0 z-40 top-0 bg-white text-black h-[140px] md:h-[80px] py-2
             {{ profil.user.username }}
             </a>
         <nav class="flex flex-row gap-4 text-sm">
-            {% include "lang.html" %}
+            {% include "portfolio/Manon/lang.html" %}
             <a 
                 href="{{ profil.cv.url }}" 
                 target="_blank"
                 class="flex text-white cursor-pointer items-center rounded-md border-2 overflow-hidden text-xs
-                    border-black bg-[#30888c] px-2 font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]
+                    border-black bg-violet-800 px-2 font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]
                     transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none">
                 {% trans "Download CV" %}
                 <i class="mx-2 fa fa-download"></i>

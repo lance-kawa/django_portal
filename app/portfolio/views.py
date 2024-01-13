@@ -19,8 +19,8 @@ def user_profile(request: HttpRequest, username: str) -> HttpResponse:
     diplomes = profil.diplomes.order_by('-graduation_date')
     experiences = profil.experiences.order_by('-end_date')
     display_order = theme.category_order.split(',')
-    template_name = 'portfolio/' + username + '.html'
-    header_name = 'portfolio/' + username + '_header.html'
+    template_name = 'portfolio/' + username + '/portfolio.html'
+    header_name = 'portfolio/' + username + '/header.html'
     return render(request, template_name, {
         'profil': profil, 
         'display_order': display_order, 
@@ -28,7 +28,6 @@ def user_profile(request: HttpRequest, username: str) -> HttpResponse:
         'bg_picture': profil.bg_picture.url,
         'cursus': chain(experiences, diplomes)
     })
-
 
 def change_language(request, lang_code):
     activate(lang_code)
@@ -39,8 +38,10 @@ def change_language(request, lang_code):
 def project_view(request: HttpRequest, project_id: str) -> HttpResponse:
     project = Project.objects.get(id=project_id)
     profil = getattr(project, 'profil', None)
-    return render(request, 'portfolio/project.html', {
+    template_name = 'portfolio/' + profil.user.username + '/project.html'
+    header_name = 'portfolio/' + profil.user.username + '/header.html'
+    return render(request, template_name, {
         'profil': profil, 
-        'header_name': 'portfolio/' + profil.user.username + '_header.html',
+        'header_name': header_name,
         'project': project,
     })
