@@ -12,4 +12,4 @@ WORKDIR /app
 EXPOSE 8000  
 RUN chmod +x migrate.sh
 ENTRYPOINT ["./migrate.sh"]
-CMD ["gunicorn", "portfolio.wsgi:application", "--bind", "0.0.0.0:8000", "--log-level", "debug", "--timeout", "300", "--workers", "3"]
+CMD ["gunicorn", "portfolio.wsgi:application", "--bind", "0.0.0.0:8000", "--log-level", "debug", "--timeout", "10", "--workers", "3"]
