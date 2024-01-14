@@ -181,6 +181,8 @@ USE_TZ = True
 STATIC_ROOT = 'portfolio/static/'
 STATIC_URL = 'static/'
 MEDIA_ROOT = 'portfolio/'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
