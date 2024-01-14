@@ -22,7 +22,8 @@ class Theme(models.Model):
     default_font_color = ColorField(blank=True, default='#000000')
     secondary_font_color = ColorField(blank=True, default='#FFFFFF')
     category_order = models.TextField(blank=True, default='')
-    profil = models.ForeignKey(Profil, on_delete=models.CASCADE, related_name='theme')
+    skill_display = models.TextField(blank=True, default='')
+    profil = models.OneToOneField(Profil, on_delete=models.CASCADE, related_name='theme')
     
 
     def __str__(self):

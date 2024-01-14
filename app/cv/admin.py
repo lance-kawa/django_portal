@@ -9,6 +9,7 @@ from cv.models.diplome import Diplome
 from cv.models.experience import Experience
 from cv.models.project import Project, ProjectImage
 from cv.models.skill import Skill, Category
+from unfold.admin import ModelAdmin
 
 
 class ProfilAdmin(ProfilAdmin):
@@ -21,14 +22,17 @@ class DiplomeAdmin(SubProfilAdmin):
 class ExperienceAdmin(SubProfilAdmin):
     list_display = ('id', 'entreprise', 'poste', 'profil_name')
 
-class CategoryAdmin(SubProfilAdmin):
-    list_display = ['id', 'name', 'skills'] 
+class CategoryAdmin(ModelAdmin):
+    list_display = ['id', 'name'] 
 
-    def get_model_perms(self, request):
-        """
-        Return empty perms dict thus hiding the model from admin index.
-        """
-        return {}
+    # def get_model_perms(self, request):
+    #     """
+    #     Return empty perms dict thus hiding the model from admin index.
+    #     """
+    #     return {}
+
+class ImageAdmin(ModelAdmin):
+    list_display = ['id', 'image', 'project'] 
 
 class SkillAdmin(SubProfilAdmin):
     list_display = ['id', 'name', 'profil_name', 'category'] 
@@ -65,3 +69,4 @@ admin.site.register(Experience, ExperienceAdmin)
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(Skill, SkillAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(ProjectImage, ImageAdmin)

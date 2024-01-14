@@ -2,10 +2,14 @@
 <header
 class="fixed inset-x-0 z-40 top-0 bg-white text-black h-[140px] md:h-[80px] py-2 border-t-2 border-b-2 border-black">
     <div class="px-8 py-2 flex justify-between items-center flex-col gap-4 md:flex-row">
-        <a  href="{% url 'user_profile' profil.user.username %}" class="text-xl font-extrabold flex justify-between items-center">
-            <img src="{{ profil.profil_picture.url }}" alt="Profile Picture" class="mx-3 h-10 w-10 rounded-full border-2 border-black bg-cover bg-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none">
-            {{ profil.user.username }}
+        <div class="flex gap-2 items-center">
+            <a  href="{% url 'home'%}"> <i class="fa-solid fa-house text-xl"></i> </a>
+            <a  href="{% url 'user_profile' profil.user.username %}" class="text-xl font-extrabold flex justify-between items-center">
+                <img src="{{ profil.profil_picture.url }}" alt="Profile Picture" class="mx-3 h-10 w-10 rounded-full border-2 border-black bg-cover bg-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none">
+                {{ profil.user.username }}
             </a>
+        </div>
+
         <nav class="flex flex-row gap-4 text-sm">
             {% include "portfolio/Ekawa/lang.html" %}
             <a 

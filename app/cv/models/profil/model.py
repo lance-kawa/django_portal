@@ -21,13 +21,14 @@ class Profil(models.Model):
     github = models.URLField(blank=True, null=True) 
     website = models.URLField(blank=True, null=True)
     intro = models.TextField(blank=True, null=True)
+    job = models.CharField(max_length=100, blank=True, null=True)
 
     def __str__(self): 
         return f"{self.name} {self.firstname}"
 
 @register(Profil)
 class ProfilTranslation(TranslationOptions):
-    fields = ('intro',)  # specify fields to translate
+    fields = ('intro', 'job')  # specify fields to translate
 
 @receiver(post_save, sender=User)
 def assign_profil_add_permission(sender, instance, created, **kwargs):

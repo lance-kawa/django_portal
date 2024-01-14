@@ -10,15 +10,20 @@ from cv.models.project.model import Project
 
 def home(request: HttpRequest) -> HttpResponse:
     users = User.objects.filter(is_staff=True)
-    return render(request, 'home.html', {'users': users})
+    skills_manon = [ skill for skill in users[0].profil.skills.all() if skill.name == 'FastAPI' or skill.name == 'React' ]
+    skills_kawa = [ skill for skill in users[1].profil.skills.all() if skill.name == 'Python' or skill.name == 'Typescript' ]
+    return render(request, 'home.html', {
+        'users': users,
+        'skills_manon': skills_manon,
+        'skills_kawa': skills_kawa
+    })
 
 def user_profile(request: HttpRequest, username: str) -> HttpResponse:
     user = get_object_or_404(User, username=username)
     profil = getattr(user, 'profil', None)
-    theme = profil.theme.get()
     diplomes = profil.diplomes.order_by('-graduation_date')
     experiences = profil.experiences.order_by('-end_date')
-    display_order = theme.category_order.split(',')
+    display_order = profil.theme.category_order.split(',')
     template_name = 'portfolio/' + username + '/portfolio.html'
     header_name = 'portfolio/' + username + '/header.html'
     return render(request, template_name, {

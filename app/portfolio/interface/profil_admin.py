@@ -1,8 +1,8 @@
-from django.contrib import admin
 from cv.models.profil import Profil
 from cv.models.profil.schema import SubProfil
+from unfold.admin import ModelAdmin
 
-class ProfilAdmin(admin.ModelAdmin):
+class ProfilAdmin(ModelAdmin):
 
     def get_form(self, request, obj=None, **kwargs):
         if not request.user.is_superuser:
@@ -37,7 +37,7 @@ class ProfilAdmin(admin.ModelAdmin):
             return obj.user == request.user
         return True
 
-class SubProfilAdmin(admin.ModelAdmin):
+class SubProfilAdmin(ModelAdmin):
 
     def get_form(self, request, obj=None, **kwargs):
         if not request.user.is_superuser:

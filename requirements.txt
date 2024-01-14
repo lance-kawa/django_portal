@@ -10,3 +10,4 @@ pillow~=10.1.0
 djangorestframework-simplejwt~=5.3.0
 whitenoise~=6.6.0
 django-modeltranslation~=0.18.11
+django-unfold~=0.19.0

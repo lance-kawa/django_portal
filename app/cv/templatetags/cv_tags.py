@@ -1,7 +1,6 @@
 from django import template
 from itertools import groupby
 from operator import itemgetter
-from django.utils.translation import get_language
 
 register = template.Library()
 
@@ -12,6 +11,10 @@ def sort_skills(skills, order_list):
     skill_groups = [{'grouper': k, 'list': list(g)} for k, g in groupby(skill_list, key=itemgetter('category'))]
     return sorted(skill_groups, key=lambda group: order_dict.get(group['grouper'].lower(), 999))
 
+@register.filter
+def filter_skills(skills, filter):
+    list_skills = filter.split(',')
+    return sorted([skill for skill in skills if skill.name in list_skills], key=lambda skill: list_skills.index(skill.name))
 
 @register.filter
 def find_replace(string, find_replace=",|_"):

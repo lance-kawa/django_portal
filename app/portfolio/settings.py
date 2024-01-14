@@ -36,7 +36,9 @@ CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS', '127.0.0.1').split(' ')
 CORS_ORIGIN_ALLOW_ALL = True 
 
 INSTALLED_APPS = [
+
     'whitenoise.runserver_nostatic',
+    'unfold',  # before django.contrib.admin
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -186,3 +188,30 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+from django.templatetags.static import static
+UNFOLD = {
+    "SITE_TITLE": "NotreAgence",
+    "SITE_HEADER": "NotreAgence",
+    "SITE_SYMBOL": "speed",  # symbol from icon set
+    "SHOW_HISTORY": True, # show/hide "History" button, default: True
+    "SHOW_VIEW_ON_SITE": True, # show/hide "View on site" button, default: True
+    "LOGIN": {
+        "image": lambda request: static("media/cv_pictures/prakasam-mathaiyan.jpg"),
+    },
+    "COLORS": {
+        "primary": {
+            "50": "250 245 255",
+            "100": "243 232 255",
+            "200": "233 213 255",
+            "300": "216 180 254",
+            "400": "192 132 252",
+            "500": "168 85 247",
+            "600": "147 51 234",
+            "700": "126 34 206",
+            "800": "107 33 168",
+            "900": "88 28 135",
+            "950": "59 7 100",
+        },
+    },
+}

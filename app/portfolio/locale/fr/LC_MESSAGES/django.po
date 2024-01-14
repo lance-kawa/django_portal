@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-13 16:42+0100\n"
+"POT-Creation-Date: 2024-01-14 17:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,28 +18,60 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: portfolio/templates/portfolio/Ekawa.html:63
-msgid "'s Portfolio"
+#: portfolio/templates/home.html:54
+msgid "Project made with ❤️"
+msgstr "Projet fait avec ❤️"
+
+#: portfolio/templates/home.html:56
+msgid ""
+"NotreAgence helps you unify your brand identity by collecting, storing and "
+"distributing design tokens and assets — automatically."
+msgstr "NotreAgence vous aide à développer votre identité de marque et vos assets digitaux sereinement"
+
+#: portfolio/templates/home.html:60
+msgid "Contact us"
+msgstr "Nous contacter"
+
+#: portfolio/templates/home.html:68
+msgid "Team members"
+msgstr "Notre équipe"
+
+#: portfolio/templates/home.html:103
+#, fuzzy
+#| msgid "'s Portfolio"
+msgid "Check portfolio !"
 msgstr " ~ Le portfolio"
 
-#: portfolio/templates/portfolio/Ekawa.html:166
-msgid "Freelance Projects"
-msgstr "Mes projets"
+#: portfolio/templates/home.html:114
+msgid "Awesome Delivery"
+msgstr "Un travail de qualité"
 
-#: portfolio/templates/portfolio/Ekawa.html:184
-msgid "View"
-msgstr "Afficher"
-
-#: portfolio/templates/portfolio/Ekawa_header.html:17
+#: portfolio/templates/portfolio/Ekawa/header.html:21
+#: portfolio/templates/portfolio/Manon/header.html:20
 msgid "Download CV"
 msgstr "Mon CV"
 
-#: portfolio/templates/portfolio/project.html:5
+#: portfolio/templates/portfolio/Ekawa/portfolio.html:63
+#: portfolio/templates/portfolio/Manon/portfolio.html:66
+msgid "'s Portfolio"
+msgstr " ~ Le portfolio"
+
+#: portfolio/templates/portfolio/Ekawa/portfolio.html:166
+#: portfolio/templates/portfolio/Manon/portfolio.html:169
+msgid "Freelance Projects"
+msgstr "Mes projets"
+
+#: portfolio/templates/portfolio/Ekawa/portfolio.html:183
+#: portfolio/templates/portfolio/Manon/portfolio.html:186
+msgid "View"
+msgstr "Afficher"
+
+#: portfolio/templates/portfolio/Ekawa/project.html:5
+#: portfolio/templates/portfolio/Manon/project.html:5
 msgid "'s Project"
 msgstr " (Projet)"
 
-#: portfolio/templates/portfolio/project.html:20
+#: portfolio/templates/portfolio/Ekawa/project.html:19
+#: portfolio/templates/portfolio/Manon/project.html:19
 msgid "My work at "
 msgstr "Mon travail pour "
-
-
