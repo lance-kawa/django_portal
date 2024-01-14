@@ -20,11 +20,11 @@ msgstr ""
 
 #: portfolio/templates/portfolio/Ekawa.html:63
 msgid "'s Portfolio"
-msgstr " Portfolio"
+msgstr " ~ Le portfolio"
 
 #: portfolio/templates/portfolio/Ekawa.html:166
 msgid "Freelance Projects"
-msgstr "Mes projets freelance"
+msgstr "Mes projets"
 
 #: portfolio/templates/portfolio/Ekawa.html:184
 msgid "View"
@@ -36,10 +36,10 @@ msgstr "Mon CV"
 
 #: portfolio/templates/portfolio/project.html:5
 msgid "'s Project"
-msgstr ": Projet"
+msgstr " (Projet)"
 
 #: portfolio/templates/portfolio/project.html:20
 msgid "My work at "
-msgstr "Mon travail chez "
+msgstr "Mon travail pour "
 
 

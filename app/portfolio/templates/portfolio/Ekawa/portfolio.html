@@ -11,10 +11,8 @@
             font-family: Playpen Sans, 'sans serif'
         }
         .bg_picture {
-            background-image: url({{ bg_picture }})
-        }
-        @keyframes fadeIn {
-            to { opacity: 1; }
+            background-image: url({{ bg_picture }});
+            background-size: cover;
         }
         @keyframes marquee {
             0% { transform: translateX(0%); }
@@ -22,7 +20,7 @@
         }
 
         @keyframes marquee2 {
-            0% { transform: translateX(100%); opacity: 1; }
+            0% { transform: translateX(100%); }
             100% { transform: translateX(0%); }
         }
 
@@ -31,8 +29,7 @@
         }
 
         .marquee2 {
-            opacity: 0; /* Start with the element hidden */
-            animation: marquee2 30s linear 2s infinite, fadeIn 0.1s linear 2s forwards;
+            animation: marquee2 30s linear 2s infinite;
         }
         @media only screen and (max-width: 768px) {
             .sm-hidden {
@@ -61,7 +58,7 @@
     <div class="flex top-0 min-h-[600px]">
         <div class="flex items-center px-4 md:px-12 lg:w-1/2 overflow-hidden py-4">
             <div>
-                <h2 class="text-2xl font-semibold text-gray-800 md:text-4xl"> {{ profil.firstname }} {{ profil.name }}<span class="text-teal-600">{% trans "'s Portfolio" %}</span> </h2>
+                <h2 class="text-2xl font-semibold text-gray-800 md:text-4xl"> {{ profil.name }} {{ profil.firstname }}<span class="text-teal-600">{% trans "'s Portfolio" %}</span> </h2>
                 <p class="mt-2 mb-6 text-sm text-gray-500 md:text-base">{{ profil.intro }}</p>
                 <ul class="flex flex-col flex-wrap gap-2 contact-icons text-lg md:flex-row">
                     {% if profil.github %}
@@ -163,17 +160,17 @@
     {% comment %} PROJECTS  {% endcomment %}
     <div class="container mx-auto my-16">
         <h1 class="text-center text-3xl font-semibold mb-12">{% trans "Freelance Projects" %}</h1>
-        <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 text-center">
+        <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 text-center">
         {% for project in profil.projects.all %}
             <figure class="flex flex-col mx-3 my-3 overflow-hidden rounded-md border-2 border-black bg-white font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] ">
                 {% if project.image %}
-                    <img class="h-full max-h-[400px] object-cover border-b-2 border-black" src="{{ project.image.url }}" alt="image" />
+                    <img class="h-full max-h-[300px] object-cover border-b-2 border-black" src="{{ project.image.url }}" alt="image" />
                 {% endif %}
-                <div class=" font-bold text-xl my-2 mx-2">{{ project.title }}</div>
-                <figcaption class="border-t-2 border-black p-4 text-zinc-600 h-[120px]">
+                <div class="font-bold text-xl p-2 mx-2">{{ project.title }}</div>
+                <figcaption class="border-t-2 border-black p-1 text-zinc-600 h-[100px] flex items-center">
                     {{ project.description|truncatechars:100 }}
                 </figcaption>
-                <div class="p-4 flex justify-end">
+                <div class="m-4 flex justify-end">
                     <a 
                         href="{% url 'project_view' project.id %}" 
                         class="flex text-white cursor-pointer items-center rounded-md border-2
