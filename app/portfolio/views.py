@@ -9,13 +9,9 @@ from django.http import HttpResponseRedirect
 from cv.models.project.model import Project
 
 def home(request: HttpRequest) -> HttpResponse:
-    users = User.objects.filter(is_staff=True)
-    skills_manon = [ skill for skill in users[0].profil.skills.all() if skill.name == 'FastAPI' or skill.name == 'React' ]
-    skills_kawa = [ skill for skill in users[1].profil.skills.all() if skill.name == 'Python' or skill.name == 'Typescript' ]
+    users = User.objects.filter(is_staff=True).order_by('-id')
     return render(request, 'home.html', {
         'users': users,
-        'skills_manon': skills_manon,
-        'skills_kawa': skills_kawa
     })
 
 def user_profile(request: HttpRequest, username: str) -> HttpResponse:
